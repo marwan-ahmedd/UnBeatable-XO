@@ -26,4 +26,7 @@ while board.isMovesLeft:
     if board.isWinner():
         print("You Have LOST !")
         break
+    if board.isDraw():
+        print("DRAW")
+        break
     

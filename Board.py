@@ -34,7 +34,9 @@ class Board:
                 print(self.__board[i][j], end=" ")
             print()
         print()
-        
+    
+    def isDraw(self):
+        return not self.isMovesLeft() and not self.isWinner()
             
     def getBoard(self):
         return self.__board
