@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Unbeatable XO Minimax Repository</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+  <title>Unbeatable XO Minimax Repository</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    code {
+      font-family: Consolas, monospace;
+      font-size: 16px;
+      background-color: #f0f0f0;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-	<header>
-		<h1>Unbeatable XO Minimax Repository</h1>
-		<nav>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Documentation</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section>
-			<h2>What is Unbeatable XO Minimax?</h2>
-			<p>Unbeatable XO Minimax is a repository that provides an implementation of the minimax algorithm for Tic-Tac-Toe.</p>
-		</section>
-		<section>
-			<h2>How to Use</h2>
-			<p>To use the repository, simply clone the code and run it on your local machine.</p>
-			<pre><code class="language-python">def minimax(game_state, player):
-    if game_is_over(game_state):
-        return score(game_state, player)
-    if player == MAX_PLAYER:
-        best_score = -inf
-        for move in possible_moves(game_state):
-            new_game_state = make_move(game_state, move, player)
-            score = minimax(new_game_state, MIN_PLAYER)
-            best_score = max(best_score, score)
-        return best_score
-    else:
-        best_score = inf
-        for move in possible_moves(game_state):
-            new_game_state = make_move(game_state, move, player)
-            score = minimax(new_game_state, MAX_PLAYER)
-            best_score = min(best_score, score)
-        return best_score</code></pre>
-		</section>
-	</main>
-	<footer>
-		<p>Copyright &copy; 2023 Unbeatable XO Minimax Repository</p>
-	</footer>
+  <div class="container">
+    <h1>Unbeatable XO Minimax Repository</h1>
+    <p>A minimax algorithm is a common technique used in game theory and artificial intelligence for finding the best possible move in a game by recursively evaluating all possible moves and their outcomes. The Unbeatable XO minimax repository is a codebase that implements the minimax algorithm for the classic game of Tic-Tac-Toe, also known as "XO."</p>
+    <p>The Unbeatable XO minimax repository is designed to create an unbeatable Tic-Tac-Toe AI that always chooses the optimal move, regardless of the player's strategy. The algorithm works by recursively evaluating all possible moves and their outcomes, assuming that the opposing player will always make the best possible move for their own strategy.</p>
+    <p>The Unbeatable XO minimax repository also includes features like alpha-beta pruning, which allows the algorithm to more efficiently evaluate potential moves by eliminating branches of the game tree that are unlikely to lead to a better outcome.</p>
+    <p>Overall, the Unbeatable XO minimax repository is a powerful tool for creating a truly unbeatable Tic-Tac-Toe AI that can compete with even the most skilled human players.</p>
+    <pre><code>function minimax(gameState, player) {
+  if (gameIsOver(gameState)) {
+    return score(gameState, player);
+  }
+  if (player === MAX_PLAYER) {
+    let bestScore = -Infinity;
+    for (let move of possibleMoves(gameState)) {
+      let newGameState = makeMove(gameState, move, player);
+      let score = minimax(newGameState, MIN_PLAYER);
+      bestScore = Math.max(bestScore, score);
+    }
+    return bestScore;
+  } else {
+    let bestScore = Infinity;
+    for (let move of possibleMoves(gameState)) {
+      let newGameState = makeMove(gameState, move, player);
+      let score = minimax(newGameState, MAX_PLAYER);
+      bestScore = Math.min(bestScore, score);
+    }
+    return bestScore;
+  }
+}</code></pre>
+  </div>
 </body>
 </html>
